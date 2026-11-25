@@ -23,9 +23,24 @@ val sadModOverhaulPatch = patch(
     description = "Replaces the ad-supported UI and packer runtime with a clean Material 3 Expressive client featuring Quad9 DoH, Tor/SOCKS5 proxy routing, a pre-install APK security scanner, and an on-device permission editor.",
     default = true
 ) {
+    category("UI, Privacy & Security")
     compatibleWith(COMPATIBILITY_HAPPYMOD)
 
     extendWith("extensions/sadmod.mpe")
+
+    val appNameOption = stringOption(
+        key = "appName",
+        default = "SadMod",
+        values = mapOf(
+            "SadMod (Default)" to "SadMod",
+            "HappyMod" to "HappyMod"
+        ),
+        title = "App name",
+        description = "Launcher display name for the patched app.",
+        required = true
+    ) { value ->
+        !value.isNullOrBlank() && value.trim().length <= 40
+    }
 
     val packageNameOption = stringOption(
         key = "packageName",
@@ -45,6 +60,7 @@ val sadModOverhaulPatch = patch(
         @Suppress("DEPRECATION")
         val resContext = resourceContext
         val targetVersion = packageMetadata.versionName ?: "3.4.5"
+        val effectiveAppName = appNameOption.value?.trim()?.takeIf { it.isNotEmpty() } ?: "SadMod"
         val effectivePackage = packageNameOption.value?.takeIf { it.isNotBlank() } ?: DEFAULT_PATCHED_PACKAGE
 
         val libEntries = listApkEntries("lib/")
@@ -130,7 +146,7 @@ val sadModOverhaulPatch = patch(
             }
 
             appEl.setAttribute("android:name", "app.sadmod.client.SadModApp")
-            appEl.setAttribute("android:label", "SadMod")
+            appEl.setAttribute("android:label", effectiveAppName)
             appEl.setAttribute("android:theme", "@android:style/Theme.Material.Light.NoActionBar")
             appEl.setAttribute("android:usesCleartextTraffic", "true")
             appEl.setAttribute("android:enableOnBackInvokedCallback", "true")

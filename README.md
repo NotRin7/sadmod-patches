@@ -66,6 +66,14 @@ java -jar morphe-desktop.jar patch \
 
 ---
 
+## ⚖️ Disclaimer & Legal Notice
+
+- **Independent Open-Source Project:** SadMod Patches is an independent project licensed under GPLv3 and is **not** affiliated with, endorsed by, or sponsored by Morphe or HappyMod.
+- **No Bundled Binaries, Secrets, or External Links:** This repository contains **zero** third-party APK files, extracted keys, server endpoints, or links to external APK download portals. All parameters are read locally from the user-supplied input file during patching.
+- **Local Privacy & Security Tooling:** The patch is intended solely to improve local UI accessibility, user-configured network privacy (DoH/proxy), and pre-install APK inspection on files supplied by the user. Users are solely responsible for complying with applicable laws and terms of service.
+
+---
+
 ## 📜 License
 
 Licensed under the [GNU General Public License v3.0](LICENSE) and subject to [NOTICE](NOTICE).

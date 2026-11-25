@@ -23,7 +23,7 @@ from pathlib import Path
 # Add the Play Store app icons to the generated README and PATCHES.md.
 # Set this to true if you want to display app icons in your readme patches list.
 #
-INCLUDE_APP_ICONS = False
+INCLUDE_APP_ICONS = True
 
 #
 # Icons to use instead of the Play Store icon, keyed by package name.
@@ -34,7 +34,11 @@ INCLUDE_APP_ICONS = False
 #
 ICON_OVERRIDES = {
     "universal": ".github/assets/universal-icon.svg",
-    # "com.example.app": "https://example.com/icon.png",
+    "com.happymod.apk": ".github/assets/sadmod-app-icon.svg",
+}
+
+NON_PLAY_PACKAGES = {
+    "com.happymod.apk",
 }
 
 
@@ -297,11 +301,12 @@ def index_row(index, app_name, package_name, count, labels):
     if icon:
         app_cell = f"{icon} {app_cell}"
     version_cell = ", ".join(f"`{escape(label)}`" for label in labels) if labels else "—"
-    package_cell = (
-        f"[`{escape(package_name, quote=False)}`]({play_store_link(package_name)})"
-        if package_name
-        else "—"
-    )
+    if not package_name:
+        package_cell = "—"
+    elif package_name in NON_PLAY_PACKAGES:
+        package_cell = f"`{escape(package_name, quote=False)}`"
+    else:
+        package_cell = f"[`{escape(package_name, quote=False)}`]({play_store_link(package_name)})"
     return f"| {index} | {app_cell} | {count} | {version_cell} | {package_cell} |"
 
 

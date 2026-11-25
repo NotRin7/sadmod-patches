@@ -65,6 +65,7 @@ dependencies {
 
     compileOnly("com.google.code.gson:gson:2.11.0")
     patchListGeneratorClasspath("com.google.code.gson:gson:2.11.0")
+    patchListGeneratorClasspath(kotlin("reflect"))
 }
 
 java {
@@ -172,7 +173,7 @@ tasks.named<Jar>("jar") {
         attributes(
             mapOf(
                 "Name" to "SadMod Patches",
-                "Description" to "Material 3 Expressive overhaul, tracker removal & permission editor for HappyMod",
+                "Description" to "Open-source Material 3 Expressive UI, privacy routing, and local APK security inspection patches",
                 "Version" to project.version.toString(),
                 "Timestamp" to System.currentTimeMillis().toString(),
                 "Source" to "https://github.com/NotRin7/sadmod-patches",
