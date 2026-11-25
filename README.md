@@ -45,11 +45,11 @@ java -jar morphe-desktop.jar patch \
 ## 🩹 Patches List
 
 <!-- PATCHES_START -->
-> **[v1.0.0](https://github.com/NotRin7/sadmod-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`main`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**1 patch** across **1 app**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
+> **[v1.1.0](https://github.com/NotRin7/sadmod-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`main`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**1 patch** across **1 app**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
 
 | # | App | Patches | Version | Package |
 |---|---|---|---|---|
-| 1 | [**HappyMod**](PATCHES.md#happymod-comhappymodapk) | 1 | `3.4.5` | [`com.happymod.apk`](https://play.google.com/store/apps/details?id=com.happymod.apk) |
+| 1 | <img src=".github/assets/sadmod-app-icon.svg" width="24" height="24" alt=""> [**HappyMod**](PATCHES.md#happymod-comhappymodapk) | 1 | `3.4.5` | `com.happymod.apk` |
 <!-- PATCHES_END -->
 
 ---
